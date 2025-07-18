@@ -1,0 +1,191 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.username {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+}
+
+.video-container {
+    position: relative;
+    width: 70%;
+    max-width: 500px;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Asegura que el video esté detrás del texto */
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.interaction-buttons {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.like-button, .emoji-button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.like-button:hover, .emoji-button:hover {
+    transform: scale(1.2);
+}
+
+.like-button.liked {
+    color: red;
+    animation: pulse-large 0.4s ease-out;
+}
+
+.floating-emojis {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.video-details {
+    position: absolute;
+    bottom: 80px;
+    left: 16px;
+    z-index: 3; /* Siempre encima del video */
+    max-width: 70%;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-family: 'Proxima Nova', sans-serif;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 8px; /* Incrementar separación con la descripción */
+}
+
+.user-info .username {
+    color: white;
+}
+
+.user-info .verified {
+    margin-left: 6px; /* Separar el icono del nombre */
+    font-size: 16px; /* Asegurar que el tamaño coincida */
+    vertical-align: middle;
+}
+
+.description {
+    font-weight: bold; /* Usar negritas */
+    font-size: 16px; /* Aumentar el tamaño */
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6; /* Mejorar la legibilidad */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 12px; /* Más separación del nombre de usuario */
+}
+
+@media (max-width: 768px) {
+    .user-info {
+        font-size: 14px;
+    }
+
+    .description {
+        font-size: 12px;
+    }
+
+    .video-details {
+        bottom: 60px; /* Ajusta para evitar choque con botones */
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 320px) {
+    .user-info {
+        font-size: 12px;
+    }
+
+    .description {
+        font-size: 10px;
+    }
+
+    .video-details {
+        bottom: 50px; /* Ajustar para evitar superposición */
+        max-width: 95%;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scale(0.5);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse-large {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(2.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
