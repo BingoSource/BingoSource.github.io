@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Quién es más probable que...?</title>
+  <link rel="stylesheet" href="probal.css">
+</head>
+<body>
+
+  <!-- Billetera visible -->
+  <div id="wallet-display" style="display:none;">
+    <span id="coins-amount">0</span> Mosquecoins
+  </div>
+
+  <h1 class="titulo">⚡ ¿Quién es más probable que...? ⚡</h1>
+
+  <div class="game-container">
+    <div class="stats">
+      <div id="pregunta-numero">Pregunta 1 de 10</div>
+      <div id="puntos-acumulados">Puntos: 0</div>
+    </div>
+    
+    <div id="pregunta" class="pregunta"></div>
+    <div id="opciones" class="opciones"></div>
+    <div id="mensaje" class="mensaje"></div>
+    <button id="btn-siguiente" class="menu-btn" onclick="siguientePregunta()" style="display:none;">Siguiente</button>
+  </div>
+
+  <button class="menu-btn" onclick="location.href='../menugame.html'">Atrás</button>
+
+  <script src="probal.js"></script>
+  <script src="../../economy.js"></script>
+  <script>
+    // Actualizar display de monedas
+    document.addEventListener('DOMContentLoaded', function() {
+      if (sessionStorage.getItem('currentUser')) {
+        updateCoinsDisplay();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #121212 url('../image/Fon2.png') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.titulo {
+  padding: 20px;
+  font-size: 2.2rem;
+  color: #0ff;
+  text-shadow: 0 0 10px #f0f, 0 0 20px #0ff;
+  margin: 0;
+  background: rgba(0,0,0,0.8);
+  border-bottom: 2px solid #0ff;
+}
+
+.game-container {
+  margin: 40px auto;
+  background: rgba(20, 20, 20, 0.9);
+  padding: 25px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 700px;
+  box-shadow: 0 0 20px #0ff;
+  border: 1px solid #333;
+}
+
+.pregunta {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  color: #fff;
+  text-shadow: 0 0 5px #0ff;
+}
+
+.opciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.opcion-btn {
+  background: #222;
+  color: white;
+  border: 2px solid #0ff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.opcion-btn.pequeno {
+  padding: 10px 16px;
+  font-size: 0.9rem;
+}
+
+.opcion-btn.normal {
+  padding: 12px 20px;
+  font-size: 1rem;
+}
+
+.opcion-btn.grande {
+  padding: 15px 25px;
+  font-size: 1.1rem;
+}
+
+.opcion-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px #ff0, 0 0 25px #f0f;
+  background: #333;
+}
+
+.opcion-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.correcta {
+  background: #006400 !important;
+  border-color: #00ff00 !important;
+  box-shadow: 0 0 15px #00ff00 !important;
+}
+
+.incorrecta {
+  background: #8B0000 !important;
+  border-color: #ff0000 !important;
+  box-shadow: 0 0 15px #ff0000 !important;
+}
+
+.mensaje {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  min-height: 50px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.5);
+}
+
+.mensaje-extra {
+  font-size: 1.2rem;
+  color: gold;
+  font-weight: bold;
+  animation: popExtra 0.5s ease forwards;
+}
+
+@keyframes popExtra {
+  0% { transform: scale(0.2); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.menu-btn {
+  margin: 25px auto 10px;
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00);
+  border: none;
+  border-radius: 10px;
+  text-shadow: 0 0 5px #000;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ff7300, 0 0 25px #ffeb00;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: #ffcc00;
+}
+
+.recompensa {
+  color: gold;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+#wallet-display {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.6);
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 0 10px gold;
+  z-index: 100;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 10px #ff7300, 0 0 20px #ffeb00; }
+  50% { box-shadow: 0 0 20px #ff7300, 0 0 30px #ffeb00; }
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}

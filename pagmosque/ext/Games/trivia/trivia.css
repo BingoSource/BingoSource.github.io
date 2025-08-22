@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+.titulo {
+    padding: 20px;
+    font-size: 2.2rem;
+    color: #0ff;
+    text-shadow: 0 0 10px #f0f, 0 0 20px #0ff;
+    margin: 0;
+    background: rgba(0,0,0,0.6);
+    border-bottom: 2px solid #0ff;
+}
+
+.trivia-container {
+    margin: 30px auto;
+    background: rgba(20, 20, 20, 0.85);
+    padding: 25px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 20px #0ff;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #ffcc00;
+}
+
+.pregunta {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    min-height: 80px;
+}
+
+.opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.opcion-btn {
+    background: #111;
+    color: white;
+    border: 2px solid #0ff;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.opcion-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ff0, 0 0 25px #f0f;
+}
+
+.correcta {
+    background: green !important;
+    border-color: lime !important;
+}
+
+.incorrecta {
+    background: darkred !important;
+    border-color: red !important;
+}
+
+.mensaje {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    min-height: 30px;
+}
+
+.menu-btn {
+    margin: 25px auto 10px;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00);
+    border: none;
+    border-radius: 10px;
+    text-shadow: 0 0 5px #000;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: pulse 1.5s infinite;
+}
+
+.menu-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ff7300, 0 0 25px #ffeb00;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 10px #ff7300, 0 0 20px #ffeb00;
+    }
+    50% {
+        box-shadow: 0 0 20px #ff7300, 0 0 30px #ffeb00;
+    }
+}
+
+#wallet-display {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 0 10px gold;
+    z-index: 100;
+}
+
+.recompensa {
+    color: gold;
+    font-weight: bold;
+    margin-top: 10px;
+}

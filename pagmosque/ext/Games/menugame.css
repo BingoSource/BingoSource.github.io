@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('../../image/fon2.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
+.titulo {
+    padding: 20px;
+    font-size: 2.5rem;
+    color: #0ff;
+    text-shadow: 0 0 10px #f0f, 0 0 20px #0ff;
+    margin: 0;
+    background: rgba(0,0,0,0.5);
+    border-bottom: 2px solid #0ff;
+}
+
+.games-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px;
+}
+
+.game-card {
+    background: rgba(20, 20, 20, 0.85);
+    border-radius: 15px;
+    width: 260px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 2px solid #0ff;
+    box-shadow: 0 0 15px #0ff;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.game-card h2 {
+    font-size: 1.4rem;
+    color: #fff;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #f0f;
+    margin-bottom: 10px;
+}
+
+.game-card p {
+    font-size: 0.9rem;
+    color: gold;
+    margin: 0;
+}
+
+.game-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px #0ff, 0 0 35px #f0f;
+}
+
+.menu-btn {
+    margin: 20px auto 50px;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00);
+    border: none;
+    border-radius: 10px;
+    text-shadow: 0 0 5px #000;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: pulse 1.5s infinite;
+}
+
+.menu-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ff7300, 0 0 25px #ffeb00;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 10px #ff7300, 0 0 20px #ffeb00;
+    }
+    50% {
+        box-shadow: 0 0 20px #ff7300, 0 0 30px #ffeb00;
+    }
+}
+
+#wallet-display {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 0 10px gold;
+    z-index: 100;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    font-size: 18px;
+    text-align: center;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease, fadeOut 0.5s ease 2s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}

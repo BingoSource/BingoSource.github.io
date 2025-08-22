@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - Los Mosqueteros</title>
+    <link rel="stylesheet" href="Tstyle.css">
+</head>
+<body>
+
+<!-- Billetera visible -->
+<div id="wallet-display" style="display:none;">
+    <span id="coins-amount">0</span> Mosquecoins
+</div>
+
+<h1 class="titulo">Tienda Oficial de Los Mosqueteros 🛒</h1>
+
+<div class="tienda-container" id="productos-container">
+    <!-- Los productos se generarán desde T_app.js -->
+</div>
+
+<button class="menu-btn" onclick="location.href='../index.html?skipLogin=true'">Atrás</button>
+
+<script src="T_app.js"></script>
+<script src="../economy.js"></script>
+<script>
+    // Verificar si el usuario está logueado
+    if (!sessionStorage.getItem('currentUser')) {
+        alert('Debes iniciar sesión para acceder a la tienda');
+        location.href = '../index.html';
+    }
+    
+    // Actualizar display de monedas
+    document.addEventListener('DOMContentLoaded', function() {
+        updateCoinsDisplay();
+    });
+</script>
+</body>
+</html>

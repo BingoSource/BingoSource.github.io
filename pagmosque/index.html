@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Los Mosqueteros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="checkSkipLogin()">
+
+<!-- Usuario logeado -->
+<div id="user-display" style="display:none;"></div>
+
+<!-- Billetera visible -->
+<div id="wallet-display" style="display:none;">
+    <span id="coins-amount">0</span> Mosquecoins
+</div>
+
+<!-- Ventana modal para elegir usuario -->
+<div class="modal" id="login-modal">
+    <div class="modal-content">
+        <h2>¿Quién eres?</h2>
+        <small>Elige correctamente.</small>
+        <button class="user-btn" onclick="openPasswordModal('Wuender','201025')">Wuender</button>
+        <button class="user-btn" onclick="openPasswordModal('Jesus','5414')">Jesus</button>
+        <button class="user-btn" onclick="openPasswordModal('Eloi','2612')">Eloi</button>
+        <button class="user-btn" onclick="openPasswordModal('Juan','3421')">Juan</button>
+        <button class="user-btn" onclick="openPasswordModal('Pablo','5621')">Pablo</button>
+        <button class="user-btn developer-btn" onclick="openPasswordModal('Agua','2124')">
+            Agua
+            <span class="developer-text">Developer</span>
+        </button>
+    </div>
+</div>
+
+<!-- Ventana modal para escribir contraseña -->
+<div class="modal" id="password-modal" style="display:none;">
+    <div class="modal-content">
+        <h2 id="password-title">Introduce la contraseña</h2>
+        <input type="password" id="password-input" placeholder="Contraseña">
+        <br><br>
+        <button class="menu-btn" onclick="checkPassword()">Aceptar</button>
+        <button class="menu-btn" onclick="closePasswordModal()">Cancelar</button>
+    </div>
+</div>
+
+<!-- Modal para la billetera -->
+<div class="modal" id="wallet-modal" style="display:none;">
+    <div class="modal-content">
+        <h2>Billetera de <span id="wallet-user"></span></h2>
+        <div class="coins-display">
+            <span id="wallet-coins">0</span> Mosquecoins
+        </div>
+        <h3>Historial de transacciones</h3>
+        <div id="transaction-history"></div>
+        <br>
+        <button class="menu-btn" onclick="closeWallet()">Cerrar</button>
+    </div>
+</div>
+
+<!-- Menú principal -->
+<div id="main-menu">
+    <h1>LOS MOSQUETEROS!</h1>
+    <button class="menu-btn" onclick="location.href='ext/Tienda.html'">Tienda</button>
+    <button class="menu-btn" onclick="location.href='ext/Games/menugame.html'">Juegos</button>
+    <button class="menu-btn" onclick="showWallet()">Billetera</button>
+</div>
+
+<script src="app.js"></script>
+<script src="economy.js"></script>
+<script>
+    function checkSkipLogin() {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('skipLogin') === 'true') {
+            document.getElementById('login-modal').style.display = 'none';
+            document.getElementById('main-menu').style.display = 'block';
+            updateCoinsDisplay();
+        }
+    }
+</script>
+</body>
+</html>

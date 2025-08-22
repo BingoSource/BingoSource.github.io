@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #121212;
+    color: white;
+}
+
+.titulo {
+    text-align: center;
+    padding: 20px;
+    background: #1f1f1f;
+    margin: 0;
+    color: #0ff;
+    text-shadow: 0 0 10px #f0f, 0 0 20px #0ff;
+}
+
+.tienda-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.producto {
+    background: #1c1c1c;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.producto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #0ff, 0 0 30px #f0f;
+}
+
+.producto img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.producto-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.nombre {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.precio-verde {
+    color: #00ff00;
+}
+
+.estado-rojo {
+    color: red;
+}
+
+.estado-dorado {
+    color: gold;
+}
+
+.estado-amarillo {
+    color: yellow;
+}
+
+.detalle {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 5px;
+}
+
+.comprar-btn {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.comprar-btn:hover {
+    background: #555;
+}
+
+.menu-btn {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00);
+    border: none;
+    border-radius: 10px;
+    text-shadow: 0 0 5px #000;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: pulse 1.5s infinite;
+}
+
+.menu-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ff7300, 0 0 25px #ffeb00;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 10px #ff7300, 0 0 20px #ffeb00;
+    }
+    50% {
+        box-shadow: 0 0 20px #ff7300, 0 0 30px #ffeb00;
+    }
+}
+
+#wallet-display {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 0 10px gold;
+    z-index: 100;
+}

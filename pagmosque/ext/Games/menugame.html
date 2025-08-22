@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Juegos - Los Mosqueteros</title>
+    <link rel="stylesheet" href="menugame.css">
+</head>
+<body>
+
+<!-- Billetera visible -->
+<div id="wallet-display" style="display:none;">
+    <span id="coins-amount">0</span> Mosquecoins
+</div>
+
+<h1 class="titulo">🎮 Juegos Disponibles 🎮</h1>
+
+<div class="games-container">
+    <div class="game-card" onclick="location.href='trivia/trivia.html'">
+        <h2>Trivia</h2>
+        <p>Gana 20 Mosquecoins por completar</p>
+    </div>
+    <div class="game-card" onclick="selectGame('Yo nunca nunca')">
+        <h2>Yo nunca nunca...</h2>
+        <p>Gana 15 Mosquecoins por completar</p>
+    </div>
+    <div class="game-card" onclick="location.href='probalt/probal.html'">
+        <h2>¿Quién es más probable?</h2>
+        <p>Gana 15 Mosquecoins por completar</p>
+    </div>
+</div>
+
+<button class="menu-btn" onclick="location.href='../../index.html?skipLogin=true'">Atrás</button>
+
+<script src="menugame.js"></script>
+<script src="../../economy.js"></script>
+<script>
+    // Actualizar display de monedas
+    document.addEventListener('DOMContentLoaded', function() {
+        if (sessionStorage.getItem('currentUser')) {
+            updateCoinsDisplay();
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('Image/fon.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal-content {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px #ff00ff;
+    text-align: center;
+    width: 300px;
+    animation: popUp 0.4s ease;
+}
+
+@keyframes popUp {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.modal h2 {
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+.modal small {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.user-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+    background: #222;
+    color: white;
+    border: 2px solid #555;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.user-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #0ff, 0 0 20px #f0f;
+}
+
+/* Input contraseña */
+#password-input {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+/* Usuario logeado */
+#user-display {
+    position: fixed;
+    top: 10px; left: 10px;
+    background: rgba(0,0,0,0.6);
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 0 10px #0ff;
+}
+
+/* Billetera */
+#wallet-display {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 0 10px gold;
+    z-index: 100;
+}
+
+.coins-display {
+    font-size: 24px;
+    color: gold;
+    text-shadow: 0 0 5px orange;
+    margin: 15px 0;
+}
+
+.transaction-item {
+    padding: 8px;
+    border-bottom: 1px solid #333;
+    text-align: left;
+    font-size: 14px;
+}
+
+.transaction-positive {
+    color: #00ff00;
+}
+
+.transaction-negative {
+    color: #ff0000;
+}
+
+/* Menú principal */
+#main-menu {
+    display: none;
+    text-align: center;
+    margin-top: 120px;
+}
+
+#main-menu h1 {
+    font-size: 36px;
+    color: #ff69b4;
+    text-shadow: 0 0 8px #0ff, 0 0 15px #f0f;
+}
+
+.menu-btn {
+    display: block;
+    margin: 15px auto;
+    padding: 15px 25px;
+    font-size: 18px;
+    background: #111;
+    border: 2px solid #0ff;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 15px #ff0, 0 0 25px #f0f, 0 0 40px #0ff;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-20px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Developer button */
+.developer-btn {
+    position: relative;
+    background: linear-gradient(45deg, #00f, #0ff);
+    color: white;
+    border: 2px solid #0ff;
+    overflow: hidden;
+    box-shadow: 0 0 15px #0ff, 0 0 25px #00f;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.developer-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #0ff, 0 0 35px #00f;
+}
+
+.developer-btn::before, .developer-btn::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.5) 0%, rgba(0, 255, 255, 0) 70%);
+    border-radius: 50%;
+    animation: wave 2s infinite ease-in-out;
+    z-index: -1;
+}
+
+.developer-btn::before {
+    top: -50px;
+    left: -50px;
+}
+
+.developer-btn::after {
+    bottom: -50px;
+    right: -50px;
+}
+
+@keyframes wave {
+    0%, 100% { transform: scale(0.8); opacity: 0.8; }
+    50% { transform: scale(1.2); opacity: 1; }
+}
+
+.developer-text {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: red; /* Cambiado a rojo */
+    animation: float 1.5s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-5px); }
+}

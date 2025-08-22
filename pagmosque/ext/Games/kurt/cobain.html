@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Come As You Are - Mini Guitar Hero</title>
+    <link rel="stylesheet" href="cobain.css">
+</head>
+<body>
+    <!-- Billetera visible -->
+    <div id="wallet-display" style="display:none;">
+        <span id="coins-amount">0</span> Mosquecoins
+    </div>
+
+    <div id="gameContainer">
+        <div class="start-screen" id="startScreen">
+            <h2>Come As You Are - Mini Guitar Hero</h2>
+            <p>Presiona las flechas cuando lleguen a la línea</p>
+            <button class="start-btn" onclick="startGame()">Comenzar</button>
+        </div>
+        
+        <div class="score" id="score">Puntos: 0</div>
+        <div class="missed-count" id="missedCount">Flechas falladas: 0/10</div>
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <!-- Modal de Game Over -->
+        <div id="gameOverModal" class="modal">
+            <div class="modal-content">
+                <h2>¡Perdiste!</h2>
+                <p>Puntuación final: <span id="finalScore">0</span></p>
+                <div class="modal-buttons">
+                    <button id="restartBtn" class="modal-btn">Volver a jugar</button>
+                    <button id="exitBtn" class="modal-btn">Salir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <p>Controles:</p>
+        <div class="keys">
+            <div class="key" id="leftKey">←</div>
+            <div class="key" id="upKey">↑</div>
+            <div class="key" id="rightKey">→</div>
+        </div>
+        <p>Presiona las flechas del teclado cuando las notas lleguen a la línea</p>
+    </div>
+
+    <!-- Audio del juego -->
+    <audio id="song" src="audio/come_as_you_are.mp3"></audio>
+
+    <script src="cobain.js"></script>
+    <script src="../../economy.js"></script>
+    <script>
+        // Actualizar display de monedas
+        document.addEventListener('DOMContentLoaded', function() {
+            if (sessionStorage.getItem('currentUser')) {
+                updateCoinsDisplay();
+            }
+            
+            // Configurar event listeners para los botones del modal
+            document.getElementById('restartBtn').addEventListener('click', function() {
+                resetGame();
+                document.getElementById('gameOverModal').style.display = 'none';
+            });
+            
+            document.getElementById('exitBtn').addEventListener('click', function() {
+                window.location.href = '../menugame.html';
+            });
+        });
+    </script>
+</body>
+</html>
